@@ -29,8 +29,6 @@ func newCastleClient( ) (castleManager *s3castleclient.CastleClientManager, err 
 
 func main() {
 	newCastleClient()
-	it := dsync.Item{}
-	fmt.Printf("%v\n", it)
 }
 
 func GetLocalIP() (error, string) {
