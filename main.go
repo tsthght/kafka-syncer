@@ -1,11 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"net"
 	"os"
 	"errors"
 
 	"github.com/tsthght/s3folder/s3common/s3castleclient"
+	dsync "github.com/pingcap/tidb-binlog/drainer/sync"
 )
 
 func newCastleClient( ) (castleManager *s3castleclient.CastleClientManager, err error) {
@@ -27,6 +29,8 @@ func newCastleClient( ) (castleManager *s3castleclient.CastleClientManager, err 
 
 func main() {
 	newCastleClient()
+	it := dsync.Item{}
+	fmt.Printf("%v\n", it)
 }
 
 func GetLocalIP() (error, string) {
